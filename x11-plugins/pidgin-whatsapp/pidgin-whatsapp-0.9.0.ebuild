@@ -5,7 +5,9 @@ EAPI=6
 
 DESCRIPTION="Pidgin WhatsApp plugin"
 HOMEPAGE="https://github.com/davidgfnet/whatsapp-purple/"
-SRC_URI="https://github.com/davidgfnet/whatsapp-purple/archive/v${PN}.tar.gz"
+SRC_URI="https://github.com/davidgfnet/whatsapp-purple/archive/v${PV}.tar.gz"
+
+S="${WORKDIR}/whatsapp-purple-${PV}"
 
 LICENSE=""
 SLOT="0"
