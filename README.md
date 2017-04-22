@@ -1,2 +1,2 @@
-# gentoo-misc-overlay
-Misc gentoo ebuilds I personally use
+# misc
+Various stuff good enough to be preserved
