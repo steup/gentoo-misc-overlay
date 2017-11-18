@@ -39,7 +39,6 @@ COMMON_DEPEND="
 	dev-qt/qtgui:4[-egl]
 	dev-qt/qtopengl:4[-egl]
 	dev-qt/qtsvg:4
-	dev-qt/qtwebkit:4
 	media-libs/coin
 	media-libs/freetype
 	|| ( sci-libs/opencascade:6.9.1[vtk] sci-libs/opencascade:6.9.0[vtk] sci-libs/opencascade:6.8.0 sci-libs/opencascade:6.7.1 )
