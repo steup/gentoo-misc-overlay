@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Perl compatible regular expression extension (PCRE) module for sqlite3"
 HOMEPAGE="https://github.com/ralight/sqlite3-pcre"
-EGIT_REPO_URI="https://github.com/ralight/sqlite3-pcre"
+EGIT_REPO_URI="https://github.com/ralight/sqlite3-pcre.git"
 
 LICENSE=""
 SLOT="0"

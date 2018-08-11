@@ -1,0 +1,19 @@
+diff -u a/CMakeLists.txt b/CMakeLists.txt
+--- cnpy-9999/CMakeLists.txt	2018-05-03 00:19:23.889778085 +0200
++++ cnpy-9999.mod/CMakeLists.txt	2018-05-03 00:21:15.799579849 +0200
+@@ -15,12 +15,12 @@
+ 
+ add_library(cnpy SHARED "cnpy.cpp")
+ target_link_libraries(cnpy ${ZLIB_LIBRARIES})
+-install(TARGETS "cnpy" LIBRARY DESTINATION lib PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
++install(TARGETS "cnpy" LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+ if(ENABLE_STATIC)
+     add_library(cnpy-static STATIC "cnpy.cpp")
+     set_target_properties(cnpy-static PROPERTIES OUTPUT_NAME "cnpy")
+-    install(TARGETS "cnpy-static" ARCHIVE DESTINATION lib)
++    install(TARGETS "cnpy-static" ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ endif(ENABLE_STATIC)
+ 
+ install(FILES "cnpy.h" DESTINATION include)
+Common subdirectories: cnpy-9999/.git and cnpy-9999.mod/.git
