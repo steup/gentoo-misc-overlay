@@ -19,20 +19,26 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm ~arm64 ppc ppc64 x86 ~amd64-linux ~x86-linux"
 
-IUSE="X declarative designer help multimedia opengl phonon script scripttools sql svg test webkit xmlpatterns"
+IUSE="concurrent debug declarative designer doc help multimedia network opengl printsupport script sql svg
+	test testlib webchannel webengine webkit websockets widgets X x11extras xmlpatterns"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
-	declarative? ( X )
-	designer? ( X )
-	help? ( X )
-	multimedia? ( X )
-	opengl? ( X )
-	phonon? ( X )
-	scripttools? ( X script )
-	sql? ( X )
-	svg? ( X )
-	test? ( X )
-	webkit? ( X )
+	declarative? ( X network )
+	designer? ( widgets )
+	help? ( X widgets )
+	multimedia? ( X network )
+	opengl? ( X widgets )
+	printsupport? ( X widgets )
+	sql? ( widgets )
+	svg? ( X widgets )
+	testlib? ( widgets )
+	test? ( concurrent network printsupport sql testlib widgets X x11extras )
+	webchannel? ( network )
+	webengine? ( network widgets? ( printsupport webchannel ) )
+	webkit? ( X network printsupport widgets )
+	websockets? ( network )
+	widgets? ( X )
+	xmlpatterns? ( network )
 "
 
 # Minimal supported version of Qt.
@@ -40,29 +46,38 @@ QT_PV="5.9:5"
 
 RDEPEND="
 	${PYTHON_DEPS}
-	>=dev-python/shiboken2-${PV}:${SLOT}[${PYTHON_USEDEP}]
-	>=dev-qt/qtcore-${QT_PV}[ssl]
-	X? (
-		>=dev-qt/qtgui-${QT_PV}[accessibility]
-		>=dev-qt/qttest-${QT_PV}
-	)
+	>=dev-qt/qtcore-${QT_PV}
+	>=dev-qt/qtxml-${QT_PV}
+	concurrent? ( >=dev-qt/qtconcurrent-${QT_PV} )
 	declarative? ( >=dev-qt/qtdeclarative-${QT_PV} )
 	designer? ( >=dev-qt/designer-${QT_PV} )
+	X? ( >=dev-qt/qtgui-${QT_PV} )
 	help? ( >=dev-qt/qthelp-${QT_PV} )
-	multimedia? ( >=dev-qt/qtmultimedia-${QT_PV} )
+	multimedia? ( >=dev-qt/qtmultimedia-${QT_PV}[widgets?] )
+	network? ( >=dev-qt/qtnetwork-${QT_PV} )
 	opengl? ( >=dev-qt/qtopengl-${QT_PV} )
-	phonon? ( media-libs/phonon[qt4] )
-	script? ( >=dev-qt/qtscript-${QT_PV} )
+	printsupport? ( >=dev-qt/qtprintsupport-${QT_PV} )
+	script? ( >=dev-qt/script-${QT_PV} )
 	sql? ( >=dev-qt/qtsql-${QT_PV} )
-	svg? ( >=dev-qt/qtsvg-${QT_PV}[accessibility] )
-	webkit? ( >=dev-qt/qtwebkit-${QT_PV} )
+	svg? ( >=dev-qt/qtsvg-${QT_PV} )
+	testlib? ( >=dev-qt/qttest-${QT_PV} )
+	webchannel? ( >=dev-qt/qtwebchannel-${QT_PV} )
+	webengine? ( >=dev-qt/qtwebengine-${QT_PV}[widgets?] )
+	webkit? ( >=dev-qt/qtwebkit-5.9:5[printsupport] )
+	websockets? ( >=dev-qt/qtwebsockets-${QT_PV} )
+	widgets? ( >=dev-qt/qtwidgets-${QT_PV} )
+	x11extras? ( >=dev-qt/qtx11extras-${QT_PV} )
 	xmlpatterns? ( >=dev-qt/qtxmlpatterns-${QT_PV} )
+"
+DEPEND="${RDEPEND}
+	>=dev-python/shiboken2-${PV}:${SLOT}[${PYTHON_USEDEP}]
+	doc? ( 
+		media-gfx/graphviz
+		dev-python/sphinx
+	)
 	test? (
 		x11-base/xorg-server[xvfb]
 	)
-"
-DEPEND="${RDEPEND}
-	>=dev-qt/qtgui-${QT_PV}
 "
 
 src_prepare() {

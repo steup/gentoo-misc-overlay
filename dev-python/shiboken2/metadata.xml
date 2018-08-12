@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <maintainer type="project">
-    <email>qt@gentoo.org</email>
-    <name>Gentoo Qt Project</name>
+    <email>steup@ovgu.de</email>
+    <name>Dr.-Ing. Christoph Steup</name>
   </maintainer>
 </pkgmetadata>
