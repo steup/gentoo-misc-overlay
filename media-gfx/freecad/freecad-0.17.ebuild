@@ -85,10 +85,11 @@ src_configure() {
 		-DCMAKE_INSTALL_DOCDIR=share/doc/${PF}
 		-DCMAKE_INSTALL_INCLUDEDIR=include/${P}
 		-DFREECAD_USE_EXTERNAL_KDL="$(usex system_kdl)"
-		-DFREECAD_USE_FREETYPE="$(usex freetype)"
+		-DFREECAD_USE_FREETYPE="ON"
 		-DBUILD_WEB="$(usex start)"
 		-DBUILD_START="$(usex start)"
 		-DBUILD_PLOT="$(usex plot)"
+		-DBUILD_FEM="$(usex fem)"
 		-DBUILD_QT5="ON"
 	)
 
