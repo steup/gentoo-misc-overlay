@@ -14,7 +14,7 @@ EGIT_MIN_CLONE_TYPE=shallow
 EGIT_BRANCH="${PV}"
 
 LICENSE="LGPL-2.1"
-SLOT="0"
+SLOT="5"
 KEYWORDS="amd64 arm ~arm64 ppc ppc64 x86 ~amd64-linux ~x86-linux"
 
 IUSE="test"
