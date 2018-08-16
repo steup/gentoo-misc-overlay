@@ -34,7 +34,7 @@ COMMON_DEPEND="
 	dev-python/pyside2-tools[${PYTHON_USEDEP}]
 	media-libs/coin
 	media-libs/freetype
-	sci-libs/opencascade
+	sci-libs/opencascade[vtk]
 	sys-libs/zlib
 	virtual/glu
 	fem? ( 

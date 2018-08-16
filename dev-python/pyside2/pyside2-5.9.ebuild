@@ -7,8 +7,6 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit cmake-utils multilib python-r1 virtualx git-r3
 
-MY_P="${PN}-qt4.8+${PV}"
-
 DESCRIPTION="Python bindings for the Qt framework"
 HOMEPAGE="http://wiki.qt.io/PySide"
 EGIT_REPO_URI="https://code.qt.io/cgit/pyside/pyside.git/"
@@ -16,7 +14,7 @@ EGIT_MIN_CLONE_TYPE=shallow
 EGIT_BRANCH="${PV}"
 
 LICENSE="LGPL-2.1"
-SLOT="0"
+SLOT="5"
 KEYWORDS="amd64 arm ~arm64 ppc ppc64 x86 ~amd64-linux ~x86-linux"
 
 IUSE="concurrent debug declarative designer doc help multimedia network opengl printsupport script sql svg

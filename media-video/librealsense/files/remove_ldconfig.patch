@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orog	2018-04-21 13:58:07.916663695 +0200
++++ CMakeLists.txt	2018-04-21 13:58:18.666695023 +0200
+@@ -872,7 +872,3 @@
+ # Set library pkgconfig file for facilitating 3rd party integration
+ configure_file(config/librealsense.pc.in config/realsense2.pc @ONLY)
+ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/config/realsense2.pc"     DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+-# Update system cache with newly installed binaries/libraries
+-if(UNIX)
+-    install(CODE "execute_process(COMMAND ldconfig)")
+-endif()
