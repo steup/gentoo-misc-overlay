@@ -5,6 +5,6 @@
 <email>steup@ovgu.de</email>
 </maintainer>
 <longdescription lang="en">
-ldmtool is a Windows Logical Disk Manager (LDM) helper tool. TI enables accessing software RAID disks in linux by mapping them to device mapper devices.
+ldmtool is a Windows Logical Disk Manager (LDM) helper tool. It enables accessing software RAID disks in linux by mapping them to device mapper devices.
 </longdescription>
 </pkgmetadata>

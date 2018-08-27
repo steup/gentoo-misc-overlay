@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 systemd autotools
 
-DESCRIPTION="ldmtool is a Windows Logical Disk Manager (LDM) helper tool. TI enables accessing software RAID disks in linux by mapping them to device mapper devices."
+DESCRIPTION="Windows software RAID disks to dm mapping tool"
 HOMEPAGE="https://github.com/mdbooth/libldm"
 EGIT_REPO_URI="https://github.com/mdbooth/libldm.git"
 EGIT_COMMIT="libldm-${PV}"
