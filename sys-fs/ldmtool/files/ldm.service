@@ -1,0 +1,8 @@
+[Unit]
+Description=Windows LDM software raid disk detector and loader
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/ldmtool create all
+ExecStop=/usr/bin/ldmtool remove all
