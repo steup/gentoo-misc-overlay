@@ -9,12 +9,13 @@ inherit cmake-utils git-r3 fdo-mime gnome2-utils python-single-r1
 DESCRIPTION="A 3D model slicing application for 3D printing"
 HOMEPAGE="https://code.alephobjects.com/source/cura-lulzbot/"
 EGIT_REPO_URI="https://code.alephobjects.com/source/cura-lulzbot.git"
+EGIT_MIN_CLONE_TYPE="single"
 EGIT_COMMIT="v${PV}"
 
 LICENSE="AGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+usb"
+IUSE="+usb  zeroconf"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}
@@ -23,7 +24,7 @@ RDEPEND="${PYTHON_DEPS}
 	=dev-python/uranium-lulzbot-${PV}[${PYTHON_USEDEP}]
 	sci-libs/scipy[${PYTHON_USEDEP}]
 	usb? ( dev-python/pyserial[${PYTHON_USEDEP}] )
-	dev-python/zeroconf[${PYTHON_USEDEP}]
+	zeroconf? ( dev-python/zeroconf[${PYTHON_USEDEP}] )
 	=media-gfx/curaengine-lulzbot-${PV}"
 DEPEND="${RDEPEND}
 	sys-devel/gettext"

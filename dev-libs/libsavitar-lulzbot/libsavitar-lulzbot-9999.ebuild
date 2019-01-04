@@ -9,12 +9,12 @@ inherit cmake-utils python-single-r1 git-r3
 DESCRIPTION="libSavitar is a c++ implementation of 3mf loading with SIP python bindings"
 HOMEPAGE="https://code.alephobjects.com/source/savitar/"
 EGIT_REPO_URI="https://code.alephobjects.com/source/savitar.git"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 LICENSE="AGPL-3+"
 SLOT="0/2"
 IUSE="python static-libs"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 RDEPEND="${PYTHON_DEPS}
 	dev-python/sip[${PYTHON_USEDEP}]

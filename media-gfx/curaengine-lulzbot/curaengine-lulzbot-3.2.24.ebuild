@@ -9,6 +9,7 @@ inherit cmake-utils eutils git-r3
 DESCRIPTION="A 3D model slicing engine for 3D printing"
 HOMEPAGE="https://code.alephobjects.com/source/curaengine-lulzbot"
 EGIT_REPO_URI="https://code.alephobjects.com/source/curaengine-lulzbot.git"
+EGIT_MIN_CLONE_TYPE="single"
 EGIT_COMMIT="v${PV}"
 KEYWORDS="~amd64 ~x86"
 

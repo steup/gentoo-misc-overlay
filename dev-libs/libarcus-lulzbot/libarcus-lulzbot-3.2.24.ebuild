@@ -11,6 +11,7 @@ MY_PN="libArcus"
 DESCRIPTION="This library facilitates communication between Cura and its backend"
 HOMEPAGE="https://code.alephobjects.com/source/arcus/"
 EGIT_REPO_URI="https://code.alephobjects.com/source/arcus.git"
+EGIT_MIN_CLONE_TYPE="single"
 EGIT_COMMIT="v${PV}"
 KEYWORDS="~amd64 ~x86"
 

@@ -10,7 +10,7 @@ DESCRIPTION="A Python framework for building 3D printing related applications"
 HOMEPAGE="https://code.alephobjects.com/diffusion/U/"
 EGIT_REPO_URI="https://code.alephobjects.com/diffusion/U/uranium.git"
 EGIT_BRANCH="master"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 LICENSE="AGPL-3+"
 SLOT="0"
