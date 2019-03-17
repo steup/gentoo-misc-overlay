@@ -1,0 +1,8 @@
+#BEGIN: LinkerFlag fail on precompiled header compilation
+media-libs/opencv *FLAGS-=-Wl,*
+# END: opencv for ROS
+
+#BEGIN: LTO workarounds for tensorflow
+dev-util/bazel *FLAGS-=-flto*
+sci-libs/tensorflow *FLAGS-=-flto*
+#END: Tensorflow
