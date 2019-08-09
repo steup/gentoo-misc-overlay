@@ -4,7 +4,7 @@ inherit subversion versionator findlib
 
 KEYWORDS="amd64 ~i386"
 SLOT="0"
-LICENSE="lgpl"
+LICENSE="LGPL-2"
 
 RDEPEND="dev-lang/ocaml net-libs/ivy-bus[glib]"
 DEPEND="${RDEPEND} sys-devel/gcc sys-devel/binutils"

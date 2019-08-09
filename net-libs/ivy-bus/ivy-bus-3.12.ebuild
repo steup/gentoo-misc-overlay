@@ -3,7 +3,7 @@ EAPI="5"
 inherit subversion versionator
 
 KEYWORDS="amd64 ~i386"
-LICENSE="lgpl"
+LICENSE="LGPL-2"
 SLOT="0"
 
 MY_PV=$(replace_all_version_separators '_')
