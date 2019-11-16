@@ -34,7 +34,7 @@ ros-kinetic/srdfdom
 ros-kinetic/tf2_geometry_msgs
 ros-kinetic/tf2_sensor_msgs
 ros-kinetic/warehouse_ros
-sci-libs/tensorflow
+<sci-libs/tensorflow-1.15
 "
 DEPEND="${RDEPEND}
 	ros-kinetic/catkin
