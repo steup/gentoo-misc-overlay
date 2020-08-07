@@ -68,7 +68,8 @@ RDEPEND="
 	media-libs/giflib
 	media-libs/libjpeg-turbo
 	media-libs/libpng:0
-	>=net-libs/grpc-1.22.0
+	>=net-libs/grpc-1.22
+	<=net-libs/grpc-1.26
 	net-misc/curl
 	sys-libs/zlib
 	>=sys-apps/hwloc-2
@@ -110,8 +111,7 @@ BDEPEND="
 	dev-python/cython
 	|| (
 		=dev-util/bazel-0.24*
-		=dev-util/bazel-0.27*
-		=dev-util/bazel-0.29*
+		=dev-util/bazel-0.26*
 	)
 	cuda? (
 		>=dev-util/nvidia-cuda-toolkit-9.1[profiler]

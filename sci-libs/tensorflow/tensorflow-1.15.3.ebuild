@@ -68,7 +68,8 @@ RDEPEND="
 	media-libs/giflib
 	media-libs/libjpeg-turbo
 	media-libs/libpng:0
-	>=net-libs/grpc-1.22.0
+	>=net-libs/grpc-1.22
+	<=net-libs/grpc-1.26
 	net-misc/curl
 	sys-libs/zlib
 	>=sys-apps/hwloc-2
@@ -110,7 +111,7 @@ BDEPEND="
 	dev-python/cython
 	|| (
 		=dev-util/bazel-0.24*
-		=dev-util/bazel-0.27*
+		=dev-util/bazel-0.26*
 	)
 	cuda? (
 		>=dev-util/nvidia-cuda-toolkit-9.1[profiler]
@@ -190,9 +191,8 @@ src_configure() {
 		export TF_SET_ANDROID_WORKSPACE=0
 
 		if use python; then
-			python_export PYTHON_SITEDIR
 			export PYTHON_BIN_PATH="${PYTHON}"
-			export PYTHON_LIB_PATH="${PYTHON_SITEDIR}"
+			export PYTHON_LIB_PATH="$(python_get_sitedir)"
 		else
 			export PYTHON_BIN_PATH="$(which python)"
 			export PYTHON_LIB_PATH="$(python -c 'from distutils.sysconfig import *; print(get_python_lib())')"
@@ -203,7 +203,7 @@ src_configure() {
 		export TF_CUDA_CLANG=0
 		export TF_NEED_TENSORRT=0
 		if use cuda; then
-			export TF_CUDA_PATHS="${EPREFIX%/}/opt/cuda"
+			export TF_CUDA_PATHS="${EPREFIX}/opt/cuda"
 			export GCC_HOST_COMPILER_PATH="$(cuda_gccdir)/$(tc-getCC)"
 			export TF_CUDA_VERSION="$(cuda_toolkit_version)"
 			export TF_CUDNN_VERSION="$(cuda_cudnn_version)"
@@ -321,9 +321,8 @@ src_install() {
 		esetup.py install
 
 		# libtensorflow_framework.so is in /usr/lib already
-		python_export PYTHON_SITEDIR PYTHON_SCRIPTDIR
-		rm -f "${D}/${PYTHON_SITEDIR}"/${PN}/lib${PN}_framework.so* || die
-		rm -f "${D}/${PYTHON_SITEDIR}"/${PN}_core/lib${PN}_framework.so* || die
+		rm -f "${D}/$(python_get_sitedir)"/${PN}/lib${PN}_framework.so* || die
+		rm -f "${D}/$(python_get_sitedir)"/${PN}_core/lib${PN}_framework.so* || die
 		python_optimize
 	}
 
