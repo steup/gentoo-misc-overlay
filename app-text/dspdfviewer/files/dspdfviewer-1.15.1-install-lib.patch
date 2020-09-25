@@ -1,0 +1,15 @@
+diff -ru dspdfviewer-1.15.1.orig/CMakeLists.txt dspdfviewer-1.15.1/CMakeLists.txt
+--- dspdfviewer-1.15.1.orig/CMakeLists.txt	2020-09-25 15:55:16.729288048 +0200
++++ dspdfviewer-1.15.1/CMakeLists.txt	2020-09-25 15:54:30.479589526 +0200
+@@ -91,8 +91,9 @@
+ 
+ #### Installation
+ 
+-install(TARGETS	dspdfviewer
+-	RUNTIME DESTINATION bin)
++install(TARGETS	dspdfviewer libdspdfviewer
++	RUNTIME DESTINATION bin
++  LIBRARY DESTINATION lib64)
+ 
+ install(FILES docs/dspdfviewer.1
+ 	DESTINATION share/man/man1)

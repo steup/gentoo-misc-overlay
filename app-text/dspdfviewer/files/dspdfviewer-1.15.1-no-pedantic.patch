@@ -1,0 +1,20 @@
+diff -ru dspdfviewer-1.15.1.orig/cmake/compiler_gnu_gcc.cmake dspdfviewer-1.15.1/cmake/compiler_gnu_gcc.cmake
+--- dspdfviewer-1.15.1.orig/cmake/compiler_gnu_gcc.cmake	2020-09-25 15:40:39.084996834 +0200
++++ dspdfviewer-1.15.1/cmake/compiler_gnu_gcc.cmake	2020-09-25 15:41:15.724840242 +0200
+@@ -23,14 +23,14 @@
+ add_definitions(
+ 	-Wall
+ 	-Wextra
+-	-pedantic
++#	-pedantic
+ 	-Wold-style-cast
+ 	-Woverloaded-virtual
+ 	-Weffc++
+ )
+ 
+ # Turn all warnings into errors
+-add_definitions(-Werror -pedantic-errors)
++#add_definitions(-Werror -pedantic-errors)
+ 
+ # These warnings produce false positives on some older qt4 libraries
+ # (this failed debian s390x compilation), therefore tune them back
