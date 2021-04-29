@@ -1,15 +1,16 @@
 EAPI="5"
 
-inherit subversion versionator
+inherit git-r3 versionator
 
 KEYWORDS="amd64 ~i386"
 LICENSE="LGPL-2"
 SLOT="0"
 
-MY_PV=$(replace_all_version_separators '_')
+MY_PV=3.15
 
-ESVN_REPO_URI="http://svn.tls.cena.fr/svn/ivy/ivy-c/tags/debian_version_3_11_10"
-ESVN_OPTIONS="--trust-server-cert --non-interactive"
+EGIT_REPO_URI="https://gitpub.recherche.enac.fr/ivy/ivy-c.git"
+EGIT_CLONE_TYPE="shallow"
+EGIT_COMMIT=c238c8851fe2f58008a8a290eb66c3531b4fd0b7
 
 RDEPEND="dev-libs/libpcre"
 DEPEND="${RDEPEND} sys-devel/binutils sys-devel/gcc"
@@ -26,15 +27,15 @@ src_compile() {
 src_install() {
 	cd src
 	dolib libivy.so.${PV}
-	dosym libivy.so.${PV} usr/lib64b/libivy.so.3
+	dosym libivy.so.${PV} usr/lib64/libivy.so.3
 	dosym libivy.so.${PV} usr/lib64/libivy.so
 	dolib libgivy.so.${PV}
 	dosym libgivy.so.${PV} usr/lib64/libgivy.so.3
 	dosym libgivy.so.${PV} usr/lib64/libgivy.so
 	if use glib ; then
 		dolib libglibivy.so.${PV}
-		dosym libglibivy.so.${PV} usr/lib/libglibivy.so.3
-		dosym libglibivy.so.${PV} usr/lib/libglibivy.so
+		dosym libglibivy.so.${PV} usr/lib64/libglibivy.so.3
+		dosym libglibivy.so.${PV} usr/lib64/libglibivy.so
 	fi
 #	dolib libtclivy.so.3.12
 #	dosym libtclivy.so.3.12 usr/lib/libtclivy.so.3
