@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI="6"
 
 inherit git-r3 findlib
 
@@ -14,6 +14,8 @@ RDEPEND="dev-lang/ocaml net-libs/ivy-bus[glib]"
 DEPEND="${RDEPEND} sys-devel/gcc sys-devel/binutils"
 
 MY_PV=1.3.2
+
+PATCHES=( "${FILESDIR}/1.3.2-disable-tcl.patch" )
 
 src_install() {
 	findlib_src_preinst
