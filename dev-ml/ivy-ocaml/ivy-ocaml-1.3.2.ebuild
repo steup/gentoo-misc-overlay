@@ -1,18 +1,19 @@
 EAPI="5"
 
-inherit subversion versionator findlib
+inherit git-r3 findlib
 
 KEYWORDS="amd64 ~i386"
 SLOT="0"
 LICENSE="LGPL-2"
 
+EGIT_REPO_URI="https://gitpub.recherche.enac.fr/ivy/ivy-ocaml.git"
+EGIT_CLONE_TYPE="shallow"
+EGIT_COMMIT=9cb0e7768b7e0281a38686088cedeaee4d74790a
+
 RDEPEND="dev-lang/ocaml net-libs/ivy-bus[glib]"
 DEPEND="${RDEPEND} sys-devel/gcc sys-devel/binutils"
 
-MY_PV=$(replace_version_separator 2 "-")
-
-ESVN_REPO_URI="https://svn.tls.cena.fr/svn/ivy/ivy-ocaml/tags/${MY_PV}"
-ESVN_OPTIONS="--trust-server-cert --non-interactive"
+MY_PV=1.3.2
 
 src_install() {
 	findlib_src_preinst
