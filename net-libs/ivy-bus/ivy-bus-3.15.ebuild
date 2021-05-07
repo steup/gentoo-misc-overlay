@@ -46,7 +46,7 @@ src_install() {
 #	emake DESTDIR=$D PREFIX=/usr includes
 	if use glib ; then
 		emake PREFIX=/usr pkgconf
-		insinto /usr/lib/pkgconfig
+		insinto /usr/lib64/pkgconfig
 		doins ivy-glib.pc
 	fi
 	insinto usr/include/Ivy
