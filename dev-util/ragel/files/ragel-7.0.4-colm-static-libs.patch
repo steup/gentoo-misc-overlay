@@ -1,0 +1,14 @@
+diff -ru ragel-7.0.4.old/configure.ac ragel-7.0.4/configure.ac
+--- ragel-7.0.4.old/configure.ac	2021-12-15 17:48:03.085331363 -0000
++++ ragel-7.0.4/configure.ac	2021-12-15 17:49:28.478005041 -0000
+@@ -47,8 +47,8 @@
+ 		CPPFLAGS="-I$withval/include ${CPPFLAGS}"
+ 		CPPFLAGS="-I$withval/include/aapl ${CPPFLAGS}"
+ 		LDFLAGS="-L$withval/lib ${LDFLAGS}"
+-		LIBCOLM_LA="$withval/lib/libcolm.la"
+-		LIBFSM_LA="$withval/lib/libfsm.la"
++		LIBCOLM_LA=-lcolm
++		LIBFSM_LA=-lfsm
+ 		COLM_SHARE="$withval/share"
+ 	],
+ 	[]
