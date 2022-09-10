@@ -1,0 +1,15 @@
+diff -ru MangoHud-0.6.8.orig/subprojects/imgui.wrap MangoHud-0.6.8/subprojects/imgui.wrap
+--- MangoHud-0.6.8.orig/subprojects/imgui.wrap	2022-09-10 17:06:18.448463524 +0200
++++ MangoHud-0.6.8/subprojects/imgui.wrap	2022-09-10 17:11:08.191733058 +0200
+@@ -1,9 +1,9 @@
+ [wrap-file]
+ directory = imgui-1.81
+-source_url = https://github.com/ocornut/imgui/archive/v1.81.tar.gz
++source_url = file:../imgui-1.81.tar.gz
+ source_filename = imgui-1.81.tar.gz
+ source_hash = f7c619e03a06c0f25e8f47262dbc32d61fd033d2c91796812bf0f8c94fca78fb
+-patch_url = https://wrapdb.mesonbuild.com/v2/imgui_1.81-1/get_patch
++patch_url = file:../imgui_1.81-1_patch.zip
+ patch_filename = imgui-1.81-1-wrap.zip
+ patch_hash = 6d00b442690b6a5c5d8f898311daafbce16d370cf64f53294c3b8c5c661e435f
+ 
