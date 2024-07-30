@@ -1,3 +1,0 @@
-sci-libs/tensorflow -python
-dev-java/icedtea-bin -alsa -cups -gtk -pulseaudio -webstart
-ros-kinetic/tf2_sensor_msgs -python_targets_python3_6
