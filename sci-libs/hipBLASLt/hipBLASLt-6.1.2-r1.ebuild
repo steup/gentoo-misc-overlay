@@ -19,7 +19,7 @@ LICENSE="MIT"
 SLOT="0/$(ver_cut 1-2)"
 KEYWORDS="~amd64"
 
-SUPPORTED_GPUS=( gfx90a gfx940 gfx941 gfx942 )
+SUPPORTED_GPUS=( gfx90a gfx940 gfx941 gfx942 gfx1010 gfx1012 gfx1030 gfx1035 )
 IUSE_TARGETS=( "${SUPPORTED_GPUS[@]/#/amdgpu_targets_}" )
 IUSE="${IUSE_TARGETS[@]/#/+} test"
 RESTRICT="!test? ( test )"
@@ -50,6 +50,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-6.1.1-no-git.patch
 	"${FILESDIR}"/${PN}-6.1.1-clang-19.patch
 	"${FILESDIR}"/${PN}-6.1.2-add-more-gpus-for-default-target-list.patch
+	"${FILESDIR}"/${PN}-6.1.2-fix-fallback-arch-build.patch
 	"${FILESDIR}"/${PN}-6.1.2-add-gfx1035-1036-and-1103-to-supported-i.patch
 )
 
