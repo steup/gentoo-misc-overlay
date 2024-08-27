@@ -65,6 +65,7 @@ RDEPEND="
 	qnnpack? (
 		!sci-libs/QNNPACK
 		dev-cpp/gemmlowp
+		dev-libs/clog
 	)
 	rocm? (
 		=dev-util/hip-6.1*
